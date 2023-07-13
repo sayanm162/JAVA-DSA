@@ -1,7 +1,7 @@
 //sum of first n natural numbers
 import java.util.*;
 public class sumNnumbers {
-    public static void main(String args[]) {
+    public static void main(String sayan[]) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Value of no.: ");
         int rangeNum = sc.nextInt();
