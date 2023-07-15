@@ -1,34 +1,43 @@
-
-
+//Reversing an array using another temporary array.
+import java.util.*;
 public class ReversingArray_tempArr{
-
-    public static void revArr(int arr[], int size) {
-        int arr2[] = new int[size];
-        int j = size;
-
-        for(int i=0; i<size; i++) {
-            arr2[i] = arr[j-1-i];
-        }
-
-        //printing the array
-        System.out.println("Reverse of the array stored in temp. array: ");
-        for(int i=0; i<size; i++) {
-            System.out.print(arr2[i] + " ");
-        }
-
-    }
-
     public static void main(String args[]) {
-        int list[] = {2,4,6,8,10};
-        int len = list.length;
+       Scanner sc = new Scanner(System.in);
 
-        //printing the original array
-        System.out.println("Original Array: ");
-        for(int i=0; i<len; i++) {
-            System.out.print(list[i] + " ");
-        }
-        System.out.println();
+       System.out.print("Enter the size of the array: ");
+       int arrSize = sc.nextInt();
 
-        revArr(list, len);
+       int arr[] = new int[arrSize];
+
+       System.out.print("Enter the elements in the array: ");
+       //loop for storing the elements in array
+       for(int i=0; i<arrSize; i++) {
+            arr[i]=sc.nextInt();
+       }
+
+       reverseArray(arr);
+       sc.close();
     }
-}
+ 
+    //implementation one using another temporary array; but this requires extra space, 
+    //Timne Complexity = O(n), Space Complexity = O(2n); for two arrays
+
+    public static void reverseArray(int arr[]) {
+        int rev_arr[] = new int[arr.length]; //new array for reverse of the original copy
+        int rev_size = arr.length;
+
+        for(int i=0; i<rev_size; i++) {
+            rev_arr[i] = arr[arr.length-1-i]; // arr[0] = arr[5-1-0]  elemnents are stored in a reverse fashion
+        }
+        
+        //printing the array
+        for(int i=0; i<rev_size; i++) {
+            System.out.print(rev_arr[i] + " ");
+        }
+        
+    }
+
+   
+
+    
+ }
