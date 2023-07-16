@@ -1,3 +1,4 @@
+//printing array pairs in java
 public class ArrayPairs {
     
     public static void printPairs(int arr[]) {
