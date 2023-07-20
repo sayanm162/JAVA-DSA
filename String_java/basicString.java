@@ -18,7 +18,7 @@ public class basicString {
         String s6 = new String(s1);
 
         //System.out.println(s1.equals(s6));
-        // System.out.println(s1==s6);
+        System.out.println(s1==s6);
 
         // System.out.println(s1==s2);
         // System.out.println(s2 == s3);
