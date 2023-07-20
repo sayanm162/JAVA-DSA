@@ -15,6 +15,10 @@ public class basicString {
 
         String s4 = new String("Hello"); /*Lies in heap, referring to different individual string objects */
         String s5 = new String("Hello");
+        String s6 = new String(s1);
+
+        //System.out.println(s1.equals(s6));
+        // System.out.println(s1==s6);
 
         // System.out.println(s1==s2);
         // System.out.println(s2 == s3);
