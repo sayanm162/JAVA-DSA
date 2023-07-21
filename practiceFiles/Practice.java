@@ -18,6 +18,9 @@ public class Practice {
     //System.out.println("The key in the arr is at index: " + iterativeBinarySearch(num, key));
   //   System.out.println("The key in the arr is at index: " + recursiveBinarSearch(num, 0, num.length-1, key));
   //  sc.close();
+      int a=10;
+      String s = String.valueOf(a);
+      System.out.println(s+10);
   }
 
   public static int recursiveBinarSearch(int arr[], int low, int high, int key) {
