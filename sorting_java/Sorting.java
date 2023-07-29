@@ -1,6 +1,6 @@
 
 import java.util.*;
-public class bubbleSort {
+public class Sorting{
     //function to sort the array using bubble sort technique
     static void bubble(int arr[]){
         boolean swapped = false;
@@ -23,9 +23,28 @@ public class bubbleSort {
             }
         }
     }
+
+
+    //selection sort
+    static void selection(int arr[]) {
+        //traversing through the array/no of turns
+        for(int i=0; i<arr.length-1; i++) {
+            int smallest=i;
+            for(int j=i+1; j<arr.length; j++) {
+                if(arr[smallest]>arr[j]) {
+                    smallest =j;
+                }
+            }
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+
     public static void main(String args[]) {
         int arr[] = {4,1,5,2,3};
-        bubble(arr);
+        selection(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
