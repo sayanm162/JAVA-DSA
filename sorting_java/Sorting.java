@@ -41,10 +41,25 @@ public class Sorting{
         }
     }
 
+    //insertion sort
+    public static void insertion(int arr[]) {
+        for(int i=1; i<arr.length; i++) {
+            int current = arr[i];
+            int prev = i-1;
+            //finding out correct position to insert
+            while(prev>=0 && arr[prev]>=current) {
+                arr[prev +1] = arr[prev];
+                prev--;
+            }
+            //insertion
+            arr[prev+1] = current;
+        }
+    }
+
 
     public static void main(String args[]) {
         int arr[] = {4,1,5,2,3};
-        selection(arr);
+        insertion(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
