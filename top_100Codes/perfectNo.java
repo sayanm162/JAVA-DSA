@@ -16,6 +16,7 @@ public class perfectNo {
 
         sc.close();
     }
+    
 
     public static boolean checkPerfect(int num) {
         int sum = 0;
