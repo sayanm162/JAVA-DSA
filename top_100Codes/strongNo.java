@@ -1,5 +1,5 @@
 import java.util.*;
-
+//A strong no. is a no whose sum of factorial of each digit is equal to the number
 public class strongNo {
 public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
