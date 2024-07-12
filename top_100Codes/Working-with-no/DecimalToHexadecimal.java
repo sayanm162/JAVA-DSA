@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main{
+public class DecimalToHexadecimal{
     public static void main(String argss[]) {
         Scanner sc = new Scanner(System.in);
         int decimal = sc.nextInt();
