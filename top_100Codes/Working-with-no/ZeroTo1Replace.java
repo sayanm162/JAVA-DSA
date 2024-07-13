@@ -3,7 +3,7 @@
 
  import java.util.*;
 
- public class Main{
+ public class ZeroTo1Replace{
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int num = sc.nextInt();
