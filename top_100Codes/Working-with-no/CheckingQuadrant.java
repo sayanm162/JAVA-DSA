@@ -1,6 +1,6 @@
 //Java program to determine the quadrant in which the co-oridnate lies
 import java.util.*;
-public class Main{
+public class CheckingQuadrant{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the values of X: ");
