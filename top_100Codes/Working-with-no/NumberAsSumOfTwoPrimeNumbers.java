@@ -1,6 +1,6 @@
 /*Java program to represent a number as a sum of two prime numbers. */
 import java.util.*;
-public class Main{
+public class NumberAsSumOfTwoPrimeNumbers{
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int num = sc.nextInt();
