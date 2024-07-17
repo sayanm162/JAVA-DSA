@@ -1,61 +1,56 @@
-/*Java program to represent a number as a sum of two prime numbers. */
+
+/*Java program to convert digits to words */
 import java.util.*;
-public class Main{
-  public static void main(String[] args) {
+
+public class Main {
+  public static void main(String args[]) {
     Scanner sc = new Scanner(System.in);
     int num = sc.nextInt();
-    calculatePairs(num);
+
+    System.out.println(convertToWords(num));
     sc.close();
+
   }
 
-  public static boolean isPrime(int num) {
-    int temp = num;
-    
-    
-    if(temp<=1) {
-      return false;
+  public static String convertToWords(int num) {
+    if (num < 0 || num > 999) {
+      return "Not Valid";
     }
 
-     else if(temp<=3) {
-      return true;
+    String str = "";
+
+    String onesTens[] = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+        "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+    String Tens[] = { "", onesTens[10], "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+    String hun = "Hundred";
+
+    if (num == 0) {
+      return "Zero";
+    } else if (num < 20) {
+      return onesTens[num];
     }
 
-     else if(temp%2==0 || temp%3==0) {
-      return false;
-     }
+    else if (num <= 99) {
+      int unitPlace = num % 10;
+      int digit = num / 10;
+      int tensPlace = digit % 10;
 
-     else {
-      for(int i=5; i*i<=temp; i+=6) {
-        if(temp%i==0 || temp%(i+2)==0) {
-          return false;
-        }
-      }
-     }
+      str = Tens[tensPlace] + " " + onesTens[unitPlace];
+      return str;
 
-
-     return true;
-  } 
-
-
-
-  public static void calculatePairs(int num) {
-    if(num<=2) {
-      System.out.println("No solution exists");
-      return;
-    } 
-
-    else if(num%2 != 0) {
-      System.out.println("No solution exists");
-      return;
     }
 
-    for(int i=2; i<=num/2; i++) {
-      int j = num-i;
-      if(isPrime(i) && isPrime(j)) {
-        System.out.println("Pairs: " + i + ", " + j);
-      }
-    }
+    else if (num <= 999) {
+      int unitPlace = num % 10;
+      int digit = num / 10;
+      int tensPlace = digit % 10;
+      digit /= 10;
+      int hundPlace = digit % 10;
 
+      str = onesTens[hundPlace] + " " + hun + " " + Tens[tensPlace] + " " + onesTens[unitPlace];
+      return str;
+    }
+    return "null";
   }
 
 }
