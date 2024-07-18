@@ -1,56 +1,46 @@
 
-/*Java program to convert digits to words */
+/* Java Program to find the roots of a quadratic equation*/
 import java.util.*;
 
 public class Main {
   public static void main(String args[]) {
     Scanner sc = new Scanner(System.in);
-    int num = sc.nextInt();
+    System.out.println("Equation: ax^2 + bx + c");
+    System.out.println("Enter the value of a, b and c in order: ");
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    int c = sc.nextInt();
 
-    System.out.println(convertToWords(num));
+    roots(a, b, c);
+
     sc.close();
-
   }
 
-  public static String convertToWords(int num) {
-    if (num < 0 || num > 999) {
-      return "Not Valid";
+  public static void roots(int a, int b, int c) {
+    if (a == 0) {
+      System.out.println("Invalid quadratic equation");
+      return;
     }
 
-    String str = "";
+    int d = b * b - 4 * a * c;
+    double sqrt_val = Math.sqrt(Math.abs(d));
 
-    String onesTens[] = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
-        "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-    String Tens[] = { "", onesTens[10], "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
-    String hun = "Hundred";
-
-    if (num == 0) {
-      return "Zero";
-    } else if (num < 20) {
-      return onesTens[num];
+    if (d > 0) {
+      System.out.println("Roots are real and different");
+      System.out
+          .println("Root1: " + ((double) (-b + sqrt_val) / 2 * a) + " Root2: " + ((double) (-b - sqrt_val / 2 * a)));
     }
 
-    else if (num <= 99) {
-      int unitPlace = num % 10;
-      int digit = num / 10;
-      int tensPlace = digit % 10;
-
-      str = Tens[tensPlace] + " " + onesTens[unitPlace];
-      return str;
-
+    else if (d == 0) {
+      System.out.println("Roots are real and same");
+      System.out.println("Root1: " + ((double) (-b / 2 * a) + " Root2: " + ((double) (-b / 2 * a))));
     }
 
-    else if (num <= 999) {
-      int unitPlace = num % 10;
-      int digit = num / 10;
-      int tensPlace = digit % 10;
-      digit /= 10;
-      int hundPlace = digit % 10;
+    else {
+      System.out.println("Roots are imaginary");
+      System.out.println("Root1: " + (double) (-b / 2 * a) + "+i" + (sqrt_val) + " Root2: " + (double) (-b / 2 * a)
+          + "-i" + (sqrt_val));
 
-      str = onesTens[hundPlace] + " " + hun + " " + Tens[tensPlace] + " " + onesTens[unitPlace];
-      return str;
     }
-    return "null";
   }
-
 }
